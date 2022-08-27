@@ -3,6 +3,7 @@ import DefaultPageLayout from '$/layouts/default.astro'
 import PostPreviewList from '$/components/PostPreviewList.astro'
 import Paginator from '$/components/Paginator.astro'
 import { SITE, PAGE_SIZE } from '$/config'
+import rss from '@astrojs/rss'
 
 let title = 'Blog'
 let description = 'All the articles posted so far...'
@@ -11,22 +12,28 @@ export async function getStaticPaths({ paginate, rss }) {
   const allPosts = await Astro.glob('./*.md');
   const sortedPosts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  rss({
-    title: `${SITE.name} | Blog`,
-    description: SITE.description,
-    customData: `<language>en-us</language>`,
-    items: sortedPosts.map(item => ({
-      title: item.frontmatter.title,
-      description: item.frontmatter.description,
-      link: item.url,
-      pubDate: item.frontmatter.date,
-    })),
-  })
+  
 
     return paginate(sortedPosts, {
       pageSize: PAGE_SIZE
     })
 }
+
+export const get = () => rss({
+    // `<title>` field in output xml
+    title: 'Buzz’s Blog',
+    // `<description>` field in output xml
+    description: 'A humble Astronaut’s guide to the stars',
+    // base URL for RSS <item> links
+    // SITE will use "site" from your project's astro.config.
+    site: import.meta.env.SITE,
+    // list of `<item>`s in output xml
+    // simple example: generate items for every md file in /src/pages
+    // see "Generating items" section for required frontmatter and advanced use cases
+    items: import.meta.glob('./**/*.md'),
+    // (optional) inject custom xml
+    customData: `<language>en-us</language>`,
+});
 
 const { page } = Astro.props
 ---
