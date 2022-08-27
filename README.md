@@ -1,3 +1,5 @@
+# My Astro blog
+
 # Astro - Ink
 Crisp, minimal, personal blog theme for Astro
 
