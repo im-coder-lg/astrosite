@@ -12,4 +12,4 @@
   publish = "dist/"
 
   # Default build command.
-  command = "yarn && yarn build && echo 'Successful deploy ✨' "
+  command = "npm install && npm run build && echo 'Successful deploy ✨' "
