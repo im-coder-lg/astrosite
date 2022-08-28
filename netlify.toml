@@ -12,4 +12,4 @@
   publish = "dist/"
 
   # Default build command.
-  command = "yarn install && yarn build && echo 'Successful deploy ✨' "
+  command = "yarn && yarn build && echo 'Successful deploy ✨' "
