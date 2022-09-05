@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/post.astro
+layout: ../../layouts/post.astro
 title: Test
 description: Test1
 tags:
