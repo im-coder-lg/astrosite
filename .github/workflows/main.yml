@@ -16,6 +16,26 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - if: success()
+      run: echo $(curl -d "Successful CI build-test run!" ntfy.sh/${{secrets.NTFY_TOPIC_NAME}}) >> /dev/null
   publish-drafts:
     runs-on: ubuntu-latest
     steps:
@@ -25,5 +45,7 @@ jobs:
         uses: one-aalam/github-action-astro-publish-drafts@v0.1-beta
         with:
           github_token: $\{{ secrets.GITHUB_TOKEN }}
-          github_actor: one-aalam
-          github_repository: one-aalam/astro-ink
+          github_actor: im-coder-lg
+          github_repository: im-coder-lg/astrosite
+      - if: success()
+        run: echo $(curl -d "Drafts deployed." ntfy.sh/${{secrets.NTFY_TOPIC_NAME}}) >> /dev/null
