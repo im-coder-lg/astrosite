@@ -10,6 +10,7 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
+publish_mode: editorial_workflow
 media_folder: 'public/images/uploads' # Folder where user uploaded files should go
 public_folder: '/images/uploads'
 
@@ -18,6 +19,7 @@ collections: # A list of collections the CMS should be able to edit
     label: 'Post' # Used in the UI, ie.: "New Post"
     folder: 'src/pages/blog' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/post.astro"}
       - { label: 'Title', name: 'title', widget: 'string' }

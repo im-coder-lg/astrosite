@@ -4,7 +4,7 @@ import PostPreviewList from '../components/PostPreviewList.astro'
 
 
 const title = 'Home'
-const description = 'Astro-Ink is a crisp, minimal, personal blog theme for Astro'
+const description = 'Welcome, readers!'
 
 const posts = await Astro.glob('./blog/*.md')
 ---
@@ -13,6 +13,18 @@ const posts = await Astro.glob('./blog/*.md')
     <div class="page__actions">
         <a class="action__go-to-blog" href="/blog" title="All Posts">All Posts &rarr;</a>
     </div>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+        if (!user) {
+            window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+            });
+        }
+        });
+    }
+    </script>
 </DefaultPageLayout>
 
 <style>
