@@ -6,7 +6,7 @@ tags:
   - where-ive-been
 author: LG
 authorTwitter: imcoderlg
-date: 2024-12-18T19:16:00.000Z
+date: 2024-12-18T19:17:00.000Z
 ---
 It's been a long, long time since I've posted here, right? Some things may be in the backlog(blogs, that is), to be honest.
 So, where the hell have I been?
@@ -30,3 +30,5 @@ And now, I am writing this. It's been so damn long, I must have done this a long
 I think it is time to change things up. Since I have chosen computer science as my optional subject(not a surprise.), I've been coding Python and SQL. Maybe, I'll commit them here. I think that's what I'm going to do.
 
 To all of you who read this, I am returning. Better than ever.
+
+It is time.
