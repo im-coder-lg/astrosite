@@ -26,6 +26,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "npm install -g npm@latest && npm audit && npm install",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node",
@@ -33,6 +34,9 @@
 		"git": "latest",
 		"github-cli": "latest",
 		"sshd": "latest",
-		"desktop-lite": "latest"
+		"desktop-lite": "latest",
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts" // or a specific version like "22" or "22.5.1"
+		}
 	}
 }
