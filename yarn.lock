@@ -39,6 +39,11 @@
     github-slugger "^2.0.0"
     htmlparser2 "^10.0.0"
 
+"@astrojs/markdown-component@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/@astrojs/markdown-component/-/markdown-component-1.0.5.tgz"
+  integrity sha512-e7pzVfEZmjyZMmKGwLbfds36idAt9Yi8c0N0VQw2cVEgK8QdQecZLc07JvUSugoZxINtoVA0Afpm8EcIP52Ncw==
+
 "@astrojs/markdown-remark@6.3.10":
   version "6.3.10"
   resolved "https://registry.npmjs.org/@astrojs/markdown-remark/-/markdown-remark-6.3.10.tgz"

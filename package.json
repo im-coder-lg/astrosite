@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@astrojs/markdoc": "^0.15.10",
+    "@astrojs/markdown-component": "^1.0.5",
     "@astrojs/upgrade": "^0.6.2",
     "@astrojs/vercel": "^9.0.4",
     "@libsql/client": "^0.4.0-pre.5",
