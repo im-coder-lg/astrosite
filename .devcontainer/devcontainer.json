@@ -33,7 +33,6 @@
 		"git": "latest",
 		"github-cli": "latest",
 		"sshd": "latest",
-		"desktop-lite": "latest",
-		"homebrew": "latest"
+		"desktop-lite": "latest"
 	}
 }

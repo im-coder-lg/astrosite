@@ -1,8 +1,9 @@
 ---
-import DefaultPageLayout from '../../layouts/default.astro'
-import PostDraftPreviewList from '../../components/PostDraftPreviewList.astro'
-import Paginator from '../../components/Paginator.astro'
-import { SITE, PAGE_SIZE } from '../../config'
+export const prerender = true;
+import DefaultPageLayout from '$/layouts/default.astro'
+import PostDraftPreviewList from '$/components/PostDraftPreviewList.astro'
+import Paginator from '$/components/Paginator.astro'
+import { SITE, PAGE_SIZE } from '$/config'
 
 let title = 'Drafts'
 let description = 'You\'re viewing a list of unpublished articles on the site. Accuracy or correctness isn\'t guranteed...'
